@@ -87,7 +87,7 @@ Be concise but thorough. Use mathematical notation when helpful.
 ${context ? `\n\nCurrent context: ${context}` : ''}`;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
+      model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: message }
@@ -125,7 +125,7 @@ app.post('/api/practice/check-step', async (req, res) => {
 
     // Use AI to evaluate the student's answer
     const completion = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
+      model: "gpt-3.5-turbo",
       messages: [
         {
           role: "system",
@@ -178,7 +178,7 @@ app.post('/api/practice/generate', async (req, res) => {
     const { topic, difficulty } = req.body;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
+      model: "gpt-3.5-turbo",
       messages: [
         {
           role: "system",
